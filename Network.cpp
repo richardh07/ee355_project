@@ -121,7 +121,7 @@ void Network::saveDB(string filename){
     // TODO
     // Saves the netwrok in file <filename>
     // Look at studentDB.db as a template of the format of our database files
-    ofstream tgt_file (filename.c_str());
+    ofstream tgt_file (filename);
     Person* ptr = head;
     while (ptr != NULL){
     tgt_file << ptr->l_name <<", " << ptr->f_name << endl;
@@ -149,7 +149,7 @@ void Network::loadDB(string filename){
     head = NULL;
     tail = NULL;
     count = 0;
-    ifstream tgt_file(filename.c_str());
+    ifstream tgt_file(filename);
     string temp_str,lstname,fstname,bdate;
     int ct = 1;
     while (getline(tgt_file, temp_str)){
